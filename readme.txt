@@ -14,7 +14,8 @@ Before trying out this plugin, please take a looking at DEMO: http://zhiqiang.or
 
 This plugin uses PicasaWeb API to retrieval your albums information, cache them (but the photos themselves aren't cached), display them within blog. It looks like your own gallery service.
 
-Features:
+= Features:=
+
 * information are cached. very fast to navigate
 * image preload, fast to navigate next photo.
 * can use keyboard shortcut
