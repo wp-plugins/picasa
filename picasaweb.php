@@ -3,7 +3,7 @@
 Plugin Name: PicasaWeb
 Plugin URI: http://zhiqiang.org/blog/plugin/picasa
 Version: 1.33
-Description: 使用Google WebPicasa API在你的站内直接显示你的picasaweb上的相册。效果见<a href="http://zhiqiang.org/blog/photo.html">阅微堂相册</a>
+Description: Display your Picasa Web Albums in your own site. DEMO: http://zhiqiang.org/blog/photo.html
 Author: zhiqiang
 Author URI: http://zhiqiang.org/blog/
 */
@@ -83,9 +83,9 @@ function PICASA_includeTemplate() {
 }
 
 function PICASA_createRewriteRules($wp_rewrite) {
-  $new_rules = array( PICASA_QUERYVAR . '/(.*).html' => 'index.php?zqp=something&'. PICASA_QUERYVAR .'=' .
+  $new_rules = array( get_option("picasa_queryvar") . '/(.*).html' => 'index.php?zqp=something&'. get_option("picasa_queryvar") .'=' .
        $wp_rewrite->preg_index(1), 
-	   PICASA_QUERYVAR.".html"  => 'index.php?zqp=something' 
+	   get_option("picasa_queryvar").".html"  => 'index.php?zqp=something' 
 	);
   $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
   

@@ -130,7 +130,7 @@ function album_list() {
 			var totalalbum = $totalalbum;
 			var nowalbum = 0, albumid = $nowalbum;
 		</script>
-		<h3 style='margin-left:3px' class='pmenu'>相册首页</h3>
+		<h3 style='margin-left:3px' class='pmenu'>Home</h3>
 			<div id='albumlist'>";
     
     for ($i = 0; $i < count($albumsfeed->feed->entry); $i++ ) {
@@ -172,7 +172,7 @@ function photo_list() {
     
     echo "
 	<h3 style='margin-left:3px' class='pmenu'>
-		<a class='standard' href='{$picasa_uri}.html#$albumid'>相册首页</a> &gt; {$photosfeed->feed->title->_t}&nbsp;[共{$my_numpics}张照片]
+		<a class='standard' href='{$picasa_uri}.html#$albumid'>Home</a> &gt; {$photosfeed->feed->title->_t}&nbsp;[Total {$my_numpics}]
 	</h3>
 	<div id='photolist'>";
     
@@ -226,7 +226,7 @@ function show_photo() {
     
     echo "
 	<h3 style='margin-left:3px' class='pmenu'>
-		<a class='standard' href='{$picasa_uri}.html#$albumid'>相册首页</a> &gt; <a class='standard' href='?albumid=$albumid' onclick='return_photo_list();return false;'>$albumname</a> &gt; $current_index_text
+		<a class='standard' href='{$picasa_uri}.html#$albumid'>Home</a> &gt; <a class='standard' href='?albumid=$albumid' onclick='return_photo_list();return false;'>$albumname</a> &gt; $current_index_text
 	</h3>
     
     <table  style='margin:0 auto;width:99%'>
@@ -247,7 +247,7 @@ function show_photo() {
 				</a>
 			</td>
 			<td width='20%' align='right'>
-				<a id='zoom' href='$img_base' target='_blank' title='察看原图'>
+				<a id='zoom' href='$img_base' target='_blank' title='original photo'>
 					<img src='".get_bloginfo("home")."/wp-content/plugins/picasaweb/images/zoom_normal.gif' alt='view original'/>
 				</a>
 			</td>
@@ -262,7 +262,7 @@ function show_photo() {
 			{$photofeed->media_group->media_description->_t}
 		</h4>
 		<div>
-			<a border=0 href='javascript:;' onclick='navi();return false;' title='点击显示下一张'>
+			<a border=0 href='javascript:;' onclick='navi();return false;' title='click to display next'>
 				<img id='picture' height='{$display_height}px'   src='/images/zoom_normal.gif' class='pwimages' />
 			</a>
 		</div>
@@ -339,10 +339,10 @@ function albumhead() {
 		$img_link1 = $t1->content->src;
 		echo "
 		<div class='center'>
-			<a href='javascript:navi(-1);' title='下(上)一张' class='center'>
+			<a href='javascript:navi(-1);' title='next/previous' class='center'>
 				<img id='previous' src='".get_bloginfo("home")."/wp-content/plugins/picasaweb/images/left.gif'/>
 			</a>
-			<a href='javascript:navi(1);' title='下(上)一张' class='center'>
+			<a href='javascript:navi(1);' title='previous/next' class='center'>
 				<img id='next' src='".get_bloginfo("home")."/wp-content/plugins/picasaweb/images/right.gif'/>
 			</a>
 		</div>
@@ -368,11 +368,11 @@ Last <a href='".get_bloginfo("home")."/wp-content/plugins/picasaweb/picasaweb.ca
 		</p>";
     }
 	
-	echo "<h4>快捷键</h4>
-		o, enter: 察看选中项目(红色边框);<br/>
-	 	j, left arrow: 上一项;<br/>
-		k, right arrow: 下一项;<br/>
-		u: 返回项目列表;<br/>Power by <a href='http://zhiqiang.org/blog/plugin/picasa'>阅微堂 picasaweb 插件</a>";
+	echo "<h4>Keyboard shortcut</h4>
+		o, enter: enter choosed item (with red border);<br/>
+	 	j, left arrow: previous item;<br/>
+		k, right arrow: next item;<br/>
+		u: return items list;<br/>Power by <a href='http://zhiqiang.org/blog/plugin/picasa'>PicasaWeb</a>";
 }
 
 function echo_picasa_script() {

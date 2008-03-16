@@ -20,7 +20,6 @@ Features:
 * can use keyboard shortcut
 
 = Notice =
-* Lots of Chinese words now. Sorry about that.
 * This plugin is not for displaying album in post and page. It's different from lots of similar plugins.
 * PHP 5 and higher is required (most web hostor has it)
 * mod_rewrite is required and you must use permalink.
