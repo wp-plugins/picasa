@@ -14,7 +14,13 @@ Before trying out this plugin, please take a looking at DEMO: http://zhiqiang.or
 
 This plugin uses PicasaWeb API to retrieval your albums information, cache them (but the photos themselves aren't cached), display them within blog. It looks like your own gallery service.
 
+Features:
+* information are cached. very fast to navigate
+* image preload, fast to navigate next photo.
+* can use keyboard shortcut
+
 = Notice =
+* Lots of Chinese words now. Sorry about that.
 * This plugin is not for displaying album in post and page. It's different from lots of similar plugins.
 * PHP 5 and higher is required (most web hostor has it)
 * mod_rewrite is required and you must use permalink.
