@@ -236,19 +236,19 @@ function show_photo() {
 			</td>
 			<td width='30%' align='right'>
 				<a onclick='navi(-1);return false;' href='javascript:;'  >			
-					<img border=0 alt='Previous item' src='".get_bloginfo("home")."/wp-content/plugins/picasaweb/images/left.gif'>
+					<img border=0 alt='Previous item' src='".get_bloginfo("home")."/wp-content/plugins/picasa/images/left.gif'>
 				</a>
 			</td>
     		<td> 
 			</td>
 			<td width='30%' align='left'> 
 				<a onclick='navi(1);return false;' href='javascript:;'>
-					<img border=0 alt='Next item' src='".get_bloginfo("home")."/wp-content/plugins/picasaweb/images/right.gif'>
+					<img border=0 alt='Next item' src='".get_bloginfo("home")."/wp-content/plugins/picasa/images/right.gif'>
 				</a>
 			</td>
 			<td width='20%' align='right'>
 				<a id='zoom' href='$img_base' target='_blank' title='original photo'>
-					<img src='".get_bloginfo("home")."/wp-content/plugins/picasaweb/images/zoom_normal.gif' alt='view original'/>
+					<img src='".get_bloginfo("home")."/wp-content/plugins/picasa/images/zoom_normal.gif' alt='view original'/>
 				</a>
 			</td>
 		</tr>
@@ -329,7 +329,7 @@ function albumhead() {
 			{$photosfeed->feed->subtitle->_t}
 		</span>
 		<p class='grey' id='update'>
-			Last <a href='".get_bloginfo("home")."/wp-content/plugins/picasaweb/picasaweb.cache.php?albumid=$albumid&update='  onclick='ajaxShowPost(\"".get_bloginfo("home") . "/wp-content/plugins/picasaweb/picasaweb.cache.php?albumid=$albumid&update=\", \"update\");return false;'>update</a> at {$date}
+			Last <a href='".get_bloginfo("home")."/wp-content/plugins/picasa/picasaweb.cache.php?albumid=$albumid&update='  onclick='ajaxShowPost(\"".get_bloginfo("home") . "/wp-content/plugins/picasa/picasaweb.cache.php?albumid=$albumid&update=\", \"update\");return false;'>update</a> at {$date}
 		</p>";
 		
 		echo "<div id='next-photo-preview'>";
@@ -340,10 +340,10 @@ function albumhead() {
 		echo "
 		<div class='center'>
 			<a href='javascript:navi(-1);' title='next/previous' class='center'>
-				<img id='previous' src='".get_bloginfo("home")."/wp-content/plugins/picasaweb/images/left.gif'/>
+				<img id='previous' src='".get_bloginfo("home")."/wp-content/plugins/picasa/images/left.gif'/>
 			</a>
 			<a href='javascript:navi(1);' title='previous/next' class='center'>
-				<img id='next' src='".get_bloginfo("home")."/wp-content/plugins/picasaweb/images/right.gif'/>
+				<img id='next' src='".get_bloginfo("home")."/wp-content/plugins/picasa/images/right.gif'/>
 			</a>
 		</div>
 		<script type='text/javascript'>
@@ -364,7 +364,7 @@ function albumhead() {
 			{$albumsfeed->feed->subtitle->_t}
 		</span>
 		<p class='grey' id='update'>
-Last <a href='".get_bloginfo("home")."/wp-content/plugins/picasaweb/picasaweb.cache.php?update=' onclick='ajaxShowPost(\"". get_bloginfo("home")."/wp-content/plugins/picasaweb/picasaweb.cache.php?albumid=$albumid&update=\", \"update\");return false;'>update</a> at {$date}
+Last <a href='".get_bloginfo("home")."/wp-content/plugins/picasa/picasaweb.cache.php?update=' onclick='ajaxShowPost(\"". get_bloginfo("home")."/wp-content/plugins/picasa/picasaweb.cache.php?albumid=$albumid&update=\", \"update\");return false;'>update</a> at {$date}
 		</p>";
     }
 	
@@ -382,7 +382,7 @@ function echo_picasa_script() {
 		
 		<script type="text/javascript"> 
 			if (typeof(photolist) == "undefined" || typeof(photolist.total) == "undefined") {
-				document.write("<scri"+"pt type='text/jav"+"asc"+"ript' src='<?php bloginfo("home");?>/wp-content/plugins/picasaweb/picasaweb.cache.php?albumid=<?php echo $albumid;?>&json='></scri"+"pt>");
+				document.write("<scri"+"pt type='text/jav"+"asc"+"ript' src='<?php bloginfo("home");?>/wp-content/plugins/picasa/picasaweb.cache.php?albumid=<?php echo $albumid;?>&json='></scri"+"pt>");
 			}
 		</script>
 		

@@ -1,7 +1,7 @@
 <?php 
 
 define("PICASA_ADMIN", true); 
-include_once(ABSPATH . "/wp-content/plugins/picasaweb/picasa.inc.php");
+include_once(ABSPATH . "/wp-content/plugins/picasa/picasa.inc.php");
 
 
 if (isset($_REQUEST["picasa_username"])){

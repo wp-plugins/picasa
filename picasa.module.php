@@ -6,7 +6,7 @@
 	}
 	
 	.photobigbox{
-	background:transparent url(<?php bloginfo("home");?>/wp-content/plugins/picasaweb/images/album.gif) no-repeat scroll left center;
+	background:transparent url(<?php bloginfo("home");?>/wp-content/plugins/picasa/images/album.gif) no-repeat scroll left center;
 	height:194px;
 	text-align:center;
 	width:194px;
@@ -30,7 +30,7 @@
 	.smallpicture{float:left;}
 	.picturebox{width:164px; height:164px; padding:10px;text-align:center;}
 	.picturebox img{border:2px solid #5C7FB9;}
-	.pmenu{background:transparent url(<?php bloginfo("home");?>/wp-content/plugins/picasaweb/images/picasaweb.gif) no-repeat scroll right 0;}
+	.pmenu{background:transparent url(<?php bloginfo("home");?>/wp-content/plugins/picasa/images/picasaweb.gif) no-repeat scroll right 0;}
 	
 	#photo-list-div, #show-photo-div, #next-photo-preview{
 		clear:both;
@@ -44,9 +44,9 @@
 	<div id="content" class="narrowcolumn">
 			<div id="picasaweb"><?php
 				if (PICASA_USERNAME != "")			 
-				include_once(ABSPATH . "/wp-content/plugins/picasaweb/picasa.inc.php");
+				include_once(ABSPATH . "/wp-content/plugins/picasa/picasa.inc.php");
 				else 
-					echo "picasaweb插件未激活，请到<a href='".get_bloginfo("url")."/wp-admin/options-general.php?page=picasaweb/picasa.admin.php'>后台</a>填写用户名";
+					echo "picasaweb插件未激活，请到<a href='".get_bloginfo("url")."/wp-admin/options-general.php?page=picasa/picasa.admin.php'>后台</a>填写用户名";
 			?></div>
 	</div>
 
