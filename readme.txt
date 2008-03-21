@@ -29,7 +29,7 @@ This plugin uses PicasaWeb API to retrieval your albums information, cache them 
 == Installation ==
 = Installation instruction =
 
-1. Upload `picasaweb` fold to the `/wp-content/plugins/` directory
+1. Upload `picasa` fold to the `/wp-content/plugins/` directory
 1. Activate the plugin `picasaweb` through the 'Plugins' menu in WordPress
 1. create a directory named `cache` in the diretory `wp-content`, and make it writable by your webserver (chmod 777 will do the trick).
 1. setup the plugin under administation panel `options/picasaweb` (check option configurations section below).
@@ -40,16 +40,16 @@ This plugin uses PicasaWeb API to retrieval your albums information, cache them 
 
 There are four parameters you can configure under administator panel `options/picasaweb`:
 
-1. username - The username of your picasa web albums. Password is not needed. So this plugin only display your public albums.
-2. photo height- The height of your photos displayed. Customize it to fit your template.
-3. url - Customize the url to browse your photos. 
-4. Cache Directory - the cache diretory of your albums information. make sure the diretory is writable.
+1. `username` - The username of your picasa web albums. Password is not needed. So this plugin only display your public albums.
+2. `photo height`- The height of your photos displayed. Customize it to fit your template.
+3. `url` - Customize the url to browse your photos. 
+4. `Cache Directory` - the cache diretory of your albums information. make sure the diretory is writable.
 
 = uninstall instruction =
 
 1. deactivate the plugin or remove the plugin files.
 
-=  =
+= customize plugin template =
 
 As said in description section, this plugin need to do a lot of work to fit into your template.
 
