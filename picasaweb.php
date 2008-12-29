@@ -2,23 +2,22 @@
 /*
 Plugin Name: PicasaWeb
 Plugin URI: http://zhiqiang.org/blog/plugin/picasa
-Version: 1.34
+Version: 1.4
 Description: Display your Picasa Web Albums in your own site. DEMO: http://zhiqiang.org/blog/photo.html
 Author: zhiqiang
 Author URI: http://zhiqiang.org/blog/
 */
 
-
-if (get_option("picasa_username")==''):
+if (get_option("picasa_queryvar")===''):
 	update_option("picasa_queryvar", "photo");
 	update_option("picasa_cache_path", "/wp-content/cache/");
 	update_option("picasa_maxheight", "480");
-	add_action("init", picasa_flush_rewrite_rules);
+	picasa_flush_rewrite_rules();
 endif;
 
 define('PICASA_USERNAME', get_option("picasa_username"));  	// picasaweb user name
 define('PICASA_QUERYVAR', get_option("picasa_queryvar")?get_option("picasa_queryvar"):"photo");	// url
-define('PICASA_CACHE_PATH', get_option("picasa_cache_path")?get_option("picasa_cache_path"):"/wp-content/cache/"); 
+define('PICASA_CACHE_PATH', get_option("picasa_cache_path")); 
 // cache directory, keep it writable
 
 define('PICASA_TAGURL', 'albumid');								// URL to use when querying tags
@@ -73,7 +72,7 @@ add_action('generate_rewrite_rules', 'PICASA_createRewriteRules');
 function PICASA_includeTemplate() {
 
 	if (is_keyword()) {
-		$template = ABSPATH . "/wp-content/plugins/picasa/picasa.module.php";
+		$template = ABSPATH . "/wp-content/plugins/picasaweb/picasa.module.php";
 		if ($template) {
 			load_template($template);
 			exit;
@@ -83,12 +82,12 @@ function PICASA_includeTemplate() {
 }
 
 function PICASA_createRewriteRules($wp_rewrite) {
-  $new_rules = array( get_option("picasa_queryvar") . '/(.*).html' => 'index.php?zqp=something&'. get_option("picasa_queryvar") .'=' .
-       $wp_rewrite->preg_index(1), 
-	   get_option("picasa_queryvar").".html"  => 'index.php?zqp=something' 
-	);
-  $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
-  
+   add_rewrite_rule(PICASA_QUERYVAR . '/(.*).html','index.php?zqp=something&'. PICASA_QUERYVAR .'=' .
+          $wp_rewrite->preg_index(1));
+            add_rewrite_rule(PICASA_QUERYVAR.".html",'index.php?zqp=something');
+              picasa_flush_rewrite_rules();
+              
+ 
 //var_dump($wp_rewrite);
 }
 
@@ -103,7 +102,7 @@ function picasa_flush_rewrite_rules()
 add_action('admin_menu', 'stats_menu');
 function stats_menu() {
 	if (function_exists('add_submenu_page')) {
-		add_options_page('Picasaweb administrator',  'Picasaweb', 1, 'picasa/picasa.admin.php');
+		add_submenu_page('options-general.php',  'Picasaweb administrator',  'Picasaweb', 1, 'picasaweb/picasa.admin.php');
 	}
 }
 ?>
