@@ -2,8 +2,8 @@
 Contributors: zhiqiang
 Donate link: 
 Tags: picasa,picasaweb
-Requires at least: 2.3
-Tested up to: 2.5
+Requires at least: 2.7
+Tested up to: 2.7
 Stable tag: trunk
 
 This plugin let you browse photos of your Picasa Web Albums in your own blog.
