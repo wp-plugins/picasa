@@ -2,7 +2,7 @@
 /*
 Plugin Name: PicasaWeb
 Plugin URI: http://zhiqiang.org/blog/plugin/picasa
-Version: 1.4
+Version: 1.5
 Description: Display your Picasa Web Albums in your own site. DEMO: http://zhiqiang.org/blog/photo.html
 Author: zhiqiang
 Author URI: http://zhiqiang.org/blog/
@@ -72,7 +72,7 @@ add_action('generate_rewrite_rules', 'PICASA_createRewriteRules');
 function PICASA_includeTemplate() {
 
 	if (is_keyword()) {
-		$template = ABSPATH . "/wp-content/plugins/picasaweb/picasa.module.php";
+		$template = ABSPATH . "/wp-content/plugins/picasa/picasa.module.php";
 		if ($template) {
 			load_template($template);
 			exit;
